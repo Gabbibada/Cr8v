@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.NEXT_PUBLIC_SITE_URL),
-  title: { default: `${brand.name} — ${brand.tagline}`, template: `%s · ${brand.name}` },
+  title: { default: `${brand.name} · ${brand.tagline}`, template: `%s · ${brand.name}` },
   description: brand.description,
 };
 

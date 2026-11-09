@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { brand } from "@/lib/config/brand";
 import { signIn, signInWithGoogle, signUp, type AuthFormState } from "../actions";
 
 const ERROR_MESSAGES: Record<string, string> = {
@@ -56,7 +57,7 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   if (state.message) {
     return (
       <div className="grid gap-3">
-        <h1 className="text-display text-4xl">Check your email</h1>
+        <h1 className="text-display text-4xl">Check your inbox</h1>
         <p className="text-muted-foreground">{state.message}</p>
       </div>
     );
@@ -65,10 +66,10 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   return (
     <div className="grid gap-8">
       <div className="grid gap-3">
-        <h1 className="text-display text-4xl sm:text-5xl">{isSignUp ? "Create your account" : "Welcome back"}</h1>
+        <h1 className="text-display text-4xl sm:text-5xl">{isSignUp ? `Join ${brand.name}` : "Welcome back"}</h1>
         <p className="text-muted-foreground">
           {isSignUp
-            ? "Hire pros or offer your services — one account does both."
+            ? "Free for customers and pros. One account lets you hire, work, or both."
             : "Sign in to carry on where you left off."}
         </p>
       </div>
@@ -121,14 +122,14 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
             </p>
           )}
           <Button type="submit" size="lg" className="mt-2 w-full" disabled={pending}>
-            {pending ? "Please wait…" : isSignUp ? "Create account" : "Sign in"}
+            {pending ? "Please wait…" : isSignUp ? "Create free account" : "Sign in"}
           </Button>
         </form>
       </div>
       <p className="text-muted-foreground text-sm">
-        {isSignUp ? "Already have an account?" : "New here?"}&nbsp;
+        {isSignUp ? "Already have an account?" : `New to ${brand.name}?`}&nbsp;
         <Link href={otherHref} className="text-foreground font-medium underline-offset-4 hover:underline">
-          {isSignUp ? "Sign in" : "Create an account"}
+          {isSignUp ? "Sign in" : "Join free"}
         </Link>
       </p>
     </div>

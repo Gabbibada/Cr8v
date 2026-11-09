@@ -1,6 +1,6 @@
 export const NAV_LINKS = [
-  { href: "/#how-it-works", label: "How it works" },
+  { href: "/how-it-works", label: "How it works" },
   { href: "/#categories", label: "Categories" },
-  { href: "/#protection", label: "Payment protection" },
-  { href: "/#for-pros", label: "For pros" },
+  { href: "/pros", label: "For pros" },
+  { href: "/trust", label: "Trust & safety" },
 ];

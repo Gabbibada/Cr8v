@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AuthForm } from "@/features/auth/components/auth-form";
 
-export const metadata: Metadata = { title: "Create an account" };
+export const metadata: Metadata = { title: "Join free" };
 
 export default function SignUpPage() {
   return (

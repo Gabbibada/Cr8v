@@ -1,7 +1,8 @@
-// Single source of truth for product naming. The name is a placeholder until
-// branding is decided — change it here and nowhere else.
+// Single source of truth for product naming. Change it here and nowhere else.
+// Copy deck: docs/copy/website-copy.md
 export const brand = {
-  name: "Marketplace",
-  tagline: "Hire skilled people for any job, big or small.",
-  description: "Find and hire trusted tradespeople, creatives and local pros. Compare quotes, book and pay securely.",
+  name: "Cr8v",
+  tagline: "Skilled people for every job.",
+  description:
+    "Hire trusted tradespeople, stylists and creatives. Compare quotes, book in minutes and pay safely: your money is held until the work is done.",
 } as const;

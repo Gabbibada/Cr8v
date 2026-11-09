@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CardFan } from "@/components/marketing/card-fan";
 import { CategoryCarousel } from "@/components/marketing/category-carousel";
 import { ChatTag } from "@/components/marketing/chat-tag";
+import { Eyebrow } from "@/components/marketing/eyebrow";
 import { proImages as img } from "@/components/marketing/images";
 import { Marquee } from "@/components/marketing/marquee";
 import { Reveal, WordReveal } from "@/components/marketing/reveal";
@@ -25,7 +26,7 @@ const HIRING_MODES = [
     icon: CalendarCheck,
     title: "Book",
     lead: "Pick a time, done.",
-    body: "Choose a pro and a slot at a clear fixed or hourly price. Ideal for cleaning, handyman jobs and haircuts.",
+    body: "Choose a pro and a free slot at a clear fixed or hourly price. Ideal for cleaning, handyman jobs and haircuts.",
     image: img.barber,
     tone: "bg-card",
   },
@@ -33,7 +34,7 @@ const HIRING_MODES = [
     icon: Package,
     title: "Buy",
     lead: "Packages, priced up front.",
-    body: "A logo, a product shoot, a website: pick a ready-made package with the price and delivery time shown.",
+    body: "A logo, a product shoot, a website: choose a ready-made package with the price and delivery date shown.",
     image: img.designer,
     tone: "bg-pop-blue text-white",
   },
@@ -41,7 +42,7 @@ const HIRING_MODES = [
     icon: ClipboardList,
     title: "Brief",
     lead: "Describe it, compare quotes.",
-    body: "Post your project, get structured quotes from vetted pros, and pay in stages as the work gets done.",
+    body: "Post your project, get a handful of structured quotes from vetted pros, and pay in stages as the work gets done.",
     image: img.plumber,
     tone: "bg-card",
   },
@@ -91,16 +92,14 @@ const PROMISES = [
   },
 ];
 
+const CAFE_CREW = ["Shopfitter", "Electrician", "Signwriter", "Photographer", "Web designer", "Baker"];
+
 const PRO_BENEFITS = [
   "A professional profile and portfolio",
   "Quotes, bookings and staged payments in one place",
   "Verified badges for ID, insurance and trade cards",
   "AI help writing your profile and quotes",
 ];
-
-function Eyebrow({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <p className={cn("eyebrow text-muted-foreground", className)}>{children}</p>;
-}
 
 export default function HomePage() {
   return (
@@ -109,7 +108,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 text-center sm:px-6 sm:pt-24">
         <Reveal>
           <Eyebrow>
-            Founding Pros wanted · <span className="text-brand">South Yorkshire</span>
+            Founding Pros wanted · <span className="text-brand">South Yorkshire & Manchester</span>
           </Eyebrow>
         </Reveal>
         <Reveal
@@ -122,7 +121,7 @@ export default function HomePage() {
         <WordReveal
           delay={250}
           className="text-muted-foreground mx-auto mt-6 max-w-xl text-lg text-pretty"
-          text="Trusted tradespeople, stylists and creatives near you. Compare quotes, book in minutes, and pay safely: your money is held until the work is done."
+          text="Trusted tradespeople, stylists and creatives near you. Compare quotes, book in minutes and pay safely: your money is held until the work is done."
         />
         <Reveal delay={450} className="mt-8 flex flex-wrap justify-center gap-3">
           <Button size="lg" asChild>
@@ -141,7 +140,7 @@ export default function HomePage() {
             @leah.styles
           </ChatTag>
           <ChatTag tone="lime" className="bottom-0 left-1/2 -translate-x-1/2 rotate-[-2deg]">
-            3 quotes in 2 hours
+            Quotes, not callouts
           </ChatTag>
         </Reveal>
       </section>
@@ -222,8 +221,8 @@ export default function HomePage() {
           </span>
           <h2 className="text-display mt-6 text-4xl sm:text-6xl">Paid safely, every time.</h2>
           <p className="text-muted-foreground mt-5 max-w-md text-lg">
-            You pay into a secure holding account and the pro is paid when you confirm the job is done. No cash in hand,
-            no chasing invoices.
+            You pay into a secure holding account, and the pro is paid when you confirm the job&apos;s done. No cash in
+            hand, no chasing invoices, no awkward conversations.
           </p>
         </Reveal>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0">
@@ -251,6 +250,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* One account */}
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <Reveal className="bg-pop-ink grid gap-10 rounded-[2rem] p-8 text-white sm:p-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
+            <Eyebrow className="text-white/60">
+              One account. <span className="text-pop-lime">Every trade.</span>
+            </Eyebrow>
+            <h2 className="text-display mt-4 text-4xl sm:text-5xl">
+              Opening a café? That&apos;s six pros, not six apps.
+            </h2>
+            <p className="mt-5 max-w-md text-white/75">
+              A shopfitter, an electrician, a signwriter, a photographer, a web designer and someone to bake the first
+              batch. Hire all of them here, pay them all the same safe way, and keep every receipt in one place.
+            </p>
+          </div>
+          <ul className="flex flex-wrap gap-2" aria-label="Pros a new café might hire">
+            {CAFE_CREW.map((role, i) => (
+              <li
+                key={role}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium",
+                  i % 3 === 0 ? "bg-pop-lime text-pop-ink" : i % 3 === 1 ? "bg-white/10" : "bg-pop-blue",
+                )}
+              >
+                {role}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </section>
+
       {/* For pros */}
       <section id="for-pros" className="mx-auto grid max-w-6xl scroll-mt-24 gap-4 px-4 py-20 sm:px-6 md:grid-cols-2">
         <Reveal className="relative min-h-[28rem] overflow-hidden rounded-[2rem] text-white">
@@ -275,7 +305,7 @@ export default function HomePage() {
               className="mt-6 w-fit border-white bg-white text-black hover:bg-white/90"
               asChild
             >
-              <Link href="/sign-up">Become a Founding Pro</Link>
+              <Link href="/pros#founding">Become a Founding Pro</Link>
             </Button>
           </div>
         </Reveal>
@@ -297,6 +327,26 @@ export default function HomePage() {
               Create a free account <ArrowRight data-icon="inline-end" />
             </Link>
           </Button>
+        </Reveal>
+      </section>
+
+      {/* Closing */}
+      <section className="mx-auto max-w-6xl px-4 pt-8 pb-24 text-center sm:px-6">
+        <Reveal>
+          <h2 className="text-display text-4xl sm:text-6xl">Got a job in mind?</h2>
+          <p className="text-muted-foreground mx-auto mt-5 max-w-md text-lg">
+            Tell us about it in a sentence. It&apos;s free, and there&apos;s no obligation to hire.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button size="lg" asChild>
+              <Link href="/sign-up">
+                Get started <ArrowRight data-icon="inline-end" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="bg-card" asChild>
+              <Link href="/how-it-works">How it works</Link>
+            </Button>
+          </div>
         </Reveal>
       </section>
     </div>

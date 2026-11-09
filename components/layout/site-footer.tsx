@@ -8,25 +8,26 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Hire",
     links: [
-      { label: "How it works", href: "/#how-it-works" },
+      { label: "How it works", href: "/how-it-works" },
       { label: "Categories", href: "/#categories" },
-      { label: "Payment protection", href: "/#protection" },
+      { label: "Payment protection", href: "/trust" },
       { label: "Post a job", badge: "Soon" },
     ],
   },
   {
     title: "Work",
     links: [
-      { label: "Become a pro", href: "/sign-up" },
-      { label: "Founding Pro offer", href: "/#for-pros", badge: "New" },
-      { label: "Pro profiles", badge: "Soon" },
+      { label: "Become a pro", href: "/pros" },
+      { label: "Founding Pro offer", href: "/pros#founding", badge: "New" },
+      { label: "Fees for pros", badge: "Soon" },
     ],
   },
   {
-    title: "Company",
+    title: brand.name,
     links: [
-      { label: "Sign in", href: "/sign-in" },
-      { label: "Privacy policy", badge: "Soon" },
+      { label: "About", href: "/about" },
+      { label: "Trust & safety", href: "/trust" },
+      { label: "Privacy", badge: "Soon" },
       { label: "Terms", badge: "Soon" },
     ],
   },
@@ -38,9 +39,9 @@ export function SiteFooter() {
       <div className="bg-muted mx-auto grid max-w-6xl gap-12 rounded-[2rem] px-6 py-12 sm:px-10 md:grid-cols-[1.2fr_2fr]">
         <div className="grid content-start gap-4">
           <Logo />
-          <p className="text-display text-3xl">Your town, your pros.</p>
+          <p className="text-display text-3xl">{brand.tagline}</p>
           <p className="text-muted-foreground max-w-xs text-sm">
-            {brand.tagline} Launching in Doncaster, Sheffield and Manchester.
+            On-site in Doncaster, Sheffield and Manchester. Remote work across the UK.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
