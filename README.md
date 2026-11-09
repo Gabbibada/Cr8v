@@ -23,12 +23,12 @@ http://127.0.0.1:54324, and the database UI (Studio) is at http://127.0.0.1:5432
 
 ## Scripts
 
-| Script | What it does |
-|---|---|
-| `npm run dev` | Start the app |
-| `npm run db:reset` | Rebuild the local database from migrations |
-| `npm run db:types` | Regenerate database types after a migration |
-| `npm run lint` / `typecheck` / `test` / `build` | Checks run by CI |
+| Script                                          | What it does                                |
+| ----------------------------------------------- | ------------------------------------------- |
+| `npm run dev`                                   | Start the app                               |
+| `npm run db:reset`                              | Rebuild the local database from migrations  |
+| `npm run db:types`                              | Regenerate database types after a migration |
+| `npm run lint` / `typecheck` / `test` / `build` | Checks run by CI                            |
 
 ## Optional setup
 
@@ -36,3 +36,12 @@ http://127.0.0.1:54324, and the database UI (Studio) is at http://127.0.0.1:5432
 - **Google sign-in:** create OAuth credentials in Google Cloud, add them to `supabase/.env` (see
   `supabase/.env.example`), set `enabled = true` under `[auth.external.google]` in
   `supabase/config.toml`, restart Supabase, and set `NEXT_PUBLIC_AUTH_GOOGLE_ENABLED=true`.
+
+## Hosting
+
+- **Site:** Vercel project `cr8v` (team Cr8v), functions in Dublin (`vercel.json`). Pushes to `main`
+  deploy production; every other branch gets its own preview URL.
+- **Database:** Supabase project `Cr8v` (`ahhavxefacsiczjvxpxh`, eu-west-1). Apply new migrations with
+  `npx supabase db push --remote` after they merge to `main`.
+- **Environment variables** live in Vercel (Supabase URL, publishable and secret keys). The site URL is
+  derived from the Vercel deployment, so it isn't set there.
