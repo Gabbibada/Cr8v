@@ -35,7 +35,7 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 pb-24 sm:px-6">
+      <section className="w-full px-4 pt-8 pb-24 sm:px-6 lg:px-10">
         <Reveal className="bg-card rounded-[2rem] border p-8 sm:p-12">
           <p className="eyebrow text-muted-foreground">Why &ldquo;{brand.name}&rdquo;?</p>
           <h2 className="text-display mt-4 max-w-3xl text-4xl sm:text-5xl">

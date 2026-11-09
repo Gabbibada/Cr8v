@@ -35,8 +35,8 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="px-3 pb-3 sm:px-4 sm:pb-4">
-      <div className="bg-muted mx-auto grid max-w-6xl gap-12 rounded-[2rem] px-6 py-12 sm:px-10 md:grid-cols-[1.2fr_2fr]">
+    <footer className="px-3 pb-3 sm:px-4 sm:pb-4 lg:px-6 lg:pb-6">
+      <div className="bg-muted grid w-full gap-12 rounded-[2rem] px-6 py-12 sm:px-10 md:grid-cols-[1.2fr_2fr] lg:px-14">
         <div className="grid content-start gap-4">
           <Logo />
           <p className="text-display text-3xl">{brand.tagline}</p>

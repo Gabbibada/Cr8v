@@ -56,7 +56,7 @@ export default function TrustPage() {
         lead="Here's what we do, so you don't have to cross your fingers."
       />
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-10">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PROMISES.map(({ icon: Icon, title, body }, i) => (
             <Reveal key={title} delay={(i % 3) * 100} className="bg-card rounded-[1.75rem] border p-7 shadow-sm">
@@ -70,7 +70,7 @@ export default function TrustPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 pb-24 sm:px-6">
+      <section className="w-full px-4 pt-8 pb-24 sm:px-6 lg:px-10">
         <Reveal className="bg-pop-lime text-pop-ink rounded-[2rem] p-8 sm:p-12">
           <p className="eyebrow">Our one rule</p>
           <h2 className="text-display mt-4 max-w-3xl text-4xl sm:text-5xl">Keep payment on {brand.name}.</h2>

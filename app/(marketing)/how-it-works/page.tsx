@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
         lead="Whether it's a 30-minute trim or a three-month extension, it works the same way."
       />
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-10">
         <ol className="grid gap-4 md:grid-cols-2">
           {STEPS.map(({ title, body }, i) => (
             <Reveal as="li" key={title} delay={i * 100} className="bg-card rounded-[1.75rem] border p-8 shadow-sm">
@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
         </ol>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <section className="w-full px-4 py-16 sm:px-6 lg:px-10">
         <Reveal>
           <h2 className="text-display text-4xl sm:text-5xl">Good to know.</h2>
         </Reveal>
@@ -87,7 +87,7 @@ export default function HowItWorksPage() {
         </dl>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 pb-24 text-center sm:px-6">
+      <section className="w-full px-4 pt-8 pb-24 text-center sm:px-6 lg:px-10">
         <Reveal>
           <h2 className="text-display text-4xl sm:text-5xl">Got a job in mind?</h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-md text-lg">
