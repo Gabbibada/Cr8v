@@ -37,7 +37,7 @@ export async function signIn(_prev: AuthFormState, formData: FormData): Promise<
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword(parsed.data);
   if (error) {
-    return { error: "That email and password don't match an account.", values };
+    return { error: "That email and password don't match. Check them and try again.", values };
   }
 
   redirect(safeNextPath(formData.get("next")));
@@ -69,7 +69,7 @@ export async function signUp(_prev: AuthFormState, formData: FormData): Promise<
 
   // With email confirmation on, there's no session until the link is clicked.
   if (!data.session) {
-    return { message: `We've sent a confirmation link to ${email}. Open it to finish creating your account.` };
+    return { message: `We've sent a link to ${email}. Click it to finish setting up your account.` };
   }
 
   redirect(next);
