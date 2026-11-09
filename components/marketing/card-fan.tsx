@@ -13,7 +13,7 @@ export function CardFan({
   return (
     <div
       className={cn(
-        "relative mx-auto h-64 w-full max-w-xl [--spread:30px] [--tilt:5deg] hover:[--spread:58px] hover:[--tilt:8deg] sm:h-80 sm:hover:[--spread:84px]",
+        "relative mx-auto h-64 w-full max-w-xl [--spread:30px] [--tilt:5deg] hover:[--spread:58px] hover:[--tilt:8deg] sm:h-80 sm:hover:[--spread:84px] 2xl:h-[26rem] 2xl:max-w-3xl 2xl:[--spread:44px] 2xl:hover:[--spread:110px]",
         className,
       )}
     >
@@ -22,7 +22,7 @@ export function CardFan({
         return (
           <div
             key={alt}
-            className="absolute top-1/2 left-1/2 aspect-[4/5] w-36 transition-transform duration-700 ease-(--ease-fluid) sm:w-52"
+            className="absolute top-1/2 left-1/2 aspect-[4/5] w-36 transition-transform duration-700 ease-(--ease-fluid) sm:w-52 2xl:w-64"
             style={
               {
                 "--o": offset,
@@ -34,7 +34,7 @@ export function CardFan({
             <Image
               src={image}
               alt={alt}
-              sizes="(min-width: 640px) 208px, 144px"
+              sizes="(min-width: 1536px) 256px, (min-width: 640px) 208px, 144px"
               placeholder="blur"
               preload={i === Math.round(mid)}
               className="size-full rounded-2xl object-cover shadow-[0_20px_50px_-20px_rgb(0_0_0/0.45)] ring-4 ring-white dark:ring-white/10"

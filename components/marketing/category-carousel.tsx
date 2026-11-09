@@ -38,7 +38,7 @@ export function CategoryCarousel({ categories }: { categories: Category[] }) {
     <div>
       <ul
         ref={trackRef}
-        className="-mx-4 flex snap-x snap-mandatory [scrollbar-width:none] gap-4 overflow-x-auto scroll-smooth px-4 pb-2 sm:-mx-6 sm:px-6 [&::-webkit-scrollbar]:hidden"
+        className="-mx-4 flex snap-x snap-mandatory [scrollbar-width:none] gap-4 overflow-x-auto scroll-smooth px-4 pb-2 sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10 [&::-webkit-scrollbar]:hidden"
         aria-label="Categories"
       >
         {categories.map(({ name, examples, image }) => (

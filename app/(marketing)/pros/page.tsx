@@ -71,7 +71,7 @@ export default function ProsPage() {
         </Button>
       </Reveal>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <section className="w-full px-4 py-20 sm:px-6 lg:px-10">
         <Reveal>
           <h2 className="text-display text-4xl sm:text-5xl">Why pros join.</h2>
         </Reveal>
@@ -85,7 +85,7 @@ export default function ProsPage() {
         </div>
       </section>
 
-      <section id="founding" className="mx-auto grid max-w-6xl scroll-mt-24 gap-4 px-4 py-12 sm:px-6 md:grid-cols-2">
+      <section id="founding" className="grid w-full scroll-mt-24 gap-4 px-4 py-12 sm:px-6 md:grid-cols-2 lg:px-10">
         <Reveal className="relative min-h-[26rem] overflow-hidden rounded-[2rem]">
           <Image
             src={img.carpenter}
@@ -122,7 +122,7 @@ export default function ProsPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6">
+      <section className="w-full px-4 pt-20 pb-24 sm:px-6 lg:px-10">
         <Reveal>
           <h2 className="text-display text-4xl sm:text-5xl">Up and running in four steps.</h2>
         </Reveal>

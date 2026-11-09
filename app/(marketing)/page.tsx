@@ -105,7 +105,7 @@ export default function HomePage() {
   return (
     <div className="overflow-x-clip">
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 text-center sm:px-6 sm:pt-24">
+      <section className="w-full px-4 pt-16 pb-20 text-center sm:px-6 sm:pt-24 lg:px-10">
         <Reveal>
           <Eyebrow>
             Founding Pros wanted · <span className="text-brand">South Yorkshire & Manchester</span>
@@ -114,7 +114,7 @@ export default function HomePage() {
         <Reveal
           as="h1"
           delay={80}
-          className="text-display mx-auto mt-5 max-w-4xl text-5xl sm:text-7xl lg:text-[5.5rem]"
+          className="text-display mx-auto mt-5 max-w-4xl text-5xl sm:text-7xl lg:text-[5.5rem] 2xl:max-w-6xl 2xl:text-[7.5rem]"
         >
           Skilled people for every job.
         </Reveal>
@@ -133,7 +133,7 @@ export default function HomePage() {
             <Link href="#for-pros">I&apos;m a pro</Link>
           </Button>
         </Reveal>
-        <Reveal delay={550} className="relative mt-14">
+        <Reveal delay={550} className="relative mx-auto mt-14 max-w-3xl 2xl:max-w-4xl">
           <CardFan cards={HERO_CARDS} />
           <ChatTag className="top-2 left-[6%] rotate-[-6deg] sm:left-[18%]">@sam.sparks</ChatTag>
           <ChatTag tone="blue" className="top-10 right-[4%] rotate-[5deg] sm:right-[16%]">
@@ -146,7 +146,7 @@ export default function HomePage() {
       </section>
 
       {/* Three ways to hire */}
-      <section id="how-it-works" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6">
+      <section id="how-it-works" className="w-full scroll-mt-24 px-4 py-20 sm:px-6 lg:px-10">
         <Reveal className="text-center">
           <Eyebrow>
             Your job, <span className="text-pop-blue">your way</span>
@@ -188,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6">
+      <section id="categories" className="w-full scroll-mt-24 px-4 py-20 sm:px-6 lg:px-10">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <Eyebrow>
@@ -206,14 +206,14 @@ export default function HomePage() {
       </section>
 
       {/* Marquee band */}
-      <section aria-label="Pros on the platform" className="px-3 py-8 sm:px-4">
-        <Marquee items={MARQUEE} className="bg-pop-lime text-pop-ink mx-auto max-w-6xl rounded-[2rem] py-8 sm:py-10" />
+      <section aria-label="Pros on the platform" className="px-3 py-8 sm:px-4 lg:px-6">
+        <Marquee items={MARQUEE} className="bg-pop-lime text-pop-ink w-full rounded-[2rem] py-8 sm:py-10" />
       </section>
 
       {/* Payment protection */}
       <section
         id="protection"
-        className="mx-auto grid max-w-6xl scroll-mt-24 items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-2"
+        className="grid w-full scroll-mt-24 items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:px-10"
       >
         <Reveal>
           <span className="bg-card flex size-11 items-center justify-center rounded-2xl border shadow-sm">
@@ -251,7 +251,7 @@ export default function HomePage() {
       </section>
 
       {/* One account */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <section className="w-full px-4 py-20 sm:px-6 lg:px-10">
         <Reveal className="bg-pop-ink grid gap-10 rounded-[2rem] p-8 text-white sm:p-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
             <Eyebrow className="text-white/60">
@@ -282,7 +282,7 @@ export default function HomePage() {
       </section>
 
       {/* For pros */}
-      <section id="for-pros" className="mx-auto grid max-w-6xl scroll-mt-24 gap-4 px-4 py-20 sm:px-6 md:grid-cols-2">
+      <section id="for-pros" className="grid w-full scroll-mt-24 gap-4 px-4 py-20 sm:px-6 md:grid-cols-2 lg:px-10">
         <Reveal className="relative min-h-[28rem] overflow-hidden rounded-[2rem] text-white">
           <Image
             src={img.tradesman}
@@ -331,7 +331,7 @@ export default function HomePage() {
       </section>
 
       {/* Closing */}
-      <section className="mx-auto max-w-6xl px-4 pt-8 pb-24 text-center sm:px-6">
+      <section className="w-full px-4 pt-8 pb-24 text-center sm:px-6 lg:px-10">
         <Reveal>
           <h2 className="text-display text-4xl sm:text-6xl">Got a job in mind?</h2>
           <p className="text-muted-foreground mx-auto mt-5 max-w-md text-lg">
