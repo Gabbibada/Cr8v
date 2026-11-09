@@ -39,6 +39,14 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-pop-blue: var(--pop-blue);
+  --color-pop-lime: var(--pop-lime);
+  --color-pop-pink: var(--pop-pink);
+  --color-pop-ink: var(--pop-ink);
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-marquee: marquee 40s linear infinite;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,31 +56,39 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Light: an off-white canvas with white cards, near-black ink and pill buttons, plus a small set of
+   bold "pop" colours used for highlights (orange is the brand colour). */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.975 0.002 95);
+  --foreground: oklch(0.18 0.005 270);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.18 0.005 270);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.47 0.1 185);
+  --popover-foreground: oklch(0.18 0.005 270);
+  --primary: oklch(0.2 0.005 270);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.94 0.003 95);
+  --secondary-foreground: oklch(0.2 0.005 270);
+  --muted: oklch(0.945 0.003 95);
+  --muted-foreground: oklch(0.5 0.01 270);
+  --accent: oklch(0.94 0.003 95);
+  --accent-foreground: oklch(0.2 0.005 270);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.6 0.1 185);
+  --border: oklch(0.9 0.004 95);
+  --input: oklch(0.88 0.004 95);
+  --ring: oklch(0.68 0.19 45);
+  --brand: oklch(0.68 0.19 45);
+  --brand-foreground: oklch(0.99 0 0);
+  --pop-blue: oklch(0.5 0.25 268);
+  --pop-lime: oklch(0.93 0.17 118);
+  --pop-pink: oklch(0.58 0.22 5);
+  --pop-ink: oklch(0.18 0.005 270);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -84,24 +100,30 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.76 0.11 185);
-  --primary-foreground: oklch(0.2 0.03 185);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: oklch(0.155 0.004 270);
+  --foreground: oklch(0.97 0.003 95);
+  --card: oklch(0.205 0.005 270);
+  --card-foreground: oklch(0.97 0.003 95);
+  --popover: oklch(0.205 0.005 270);
+  --popover-foreground: oklch(0.97 0.003 95);
+  --primary: oklch(0.97 0.003 95);
+  --primary-foreground: oklch(0.18 0.005 270);
+  --secondary: oklch(0.26 0.006 270);
+  --secondary-foreground: oklch(0.97 0.003 95);
+  --muted: oklch(0.25 0.006 270);
+  --muted-foreground: oklch(0.72 0.01 270);
+  --accent: oklch(0.26 0.006 270);
+  --accent-foreground: oklch(0.97 0.003 95);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.6 0.1 185);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.74 0.17 50);
+  --brand: oklch(0.72 0.18 48);
+  --brand-foreground: oklch(0.18 0.005 270);
+  --pop-blue: oklch(0.58 0.22 268);
+  --pop-lime: oklch(0.88 0.17 118);
+  --pop-pink: oklch(0.64 0.2 5);
+  --pop-ink: oklch(0.18 0.005 270);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -126,5 +148,59 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer utilities {
+  /* Large display headings: tight tracking like the editorial reference. */
+  .text-display {
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+}
+
+/* Scroll-in reveal, driven by <Reveal> toggling data-visible. Motion is skipped for reduced-motion users. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity 0.9s var(--ease-fluid),
+    transform 0.9s var(--ease-fluid),
+    filter 0.9s var(--ease-fluid);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+  .animate-marquee {
+    animation: none;
   }
 }

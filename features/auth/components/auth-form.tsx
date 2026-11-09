@@ -4,7 +4,6 @@ import { useActionState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -56,29 +55,29 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
 
   if (state.message) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle>Check your email</CardTitle>
-          <CardDescription>{state.message}</CardDescription>
-        </CardHeader>
-      </Card>
+      <div className="grid gap-3">
+        <h1 className="text-display text-4xl">Check your email</h1>
+        <p className="text-muted-foreground">{state.message}</p>
+      </div>
     );
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-xl">{isSignUp ? "Create your account" : "Welcome back"}</CardTitle>
-        <CardDescription>
-          {isSignUp ? "Hire pros or offer your services — one account does both." : "Sign in to continue."}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
+    <div className="grid gap-8">
+      <div className="grid gap-3">
+        <h1 className="text-display text-4xl sm:text-5xl">{isSignUp ? "Create your account" : "Welcome back"}</h1>
+        <p className="text-muted-foreground">
+          {isSignUp
+            ? "Hire pros or offer your services — one account does both."
+            : "Sign in to carry on where you left off."}
+        </p>
+      </div>
+      <div className="grid gap-4">
         {googleEnabled && (
           <>
             <form action={signInWithGoogle}>
               <input type="hidden" name="next" value={next} />
-              <Button type="submit" variant="outline" className="w-full">
+              <Button type="submit" variant="outline" size="lg" className="bg-card w-full">
                 Continue with Google
               </Button>
             </form>
@@ -117,21 +116,21 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
             required
           />
           {(state.error ?? linkError) && (
-            <p role="alert" className="bg-destructive/10 text-destructive rounded-md p-3 text-sm">
+            <p role="alert" className="bg-destructive/10 text-destructive rounded-xl p-3 text-sm">
               {state.error ?? linkError}
             </p>
           )}
-          <Button type="submit" className="w-full" disabled={pending}>
+          <Button type="submit" size="lg" className="mt-2 w-full" disabled={pending}>
             {pending ? "Please wait…" : isSignUp ? "Create account" : "Sign in"}
           </Button>
         </form>
-      </CardContent>
-      <CardFooter className="text-muted-foreground justify-center text-sm">
+      </div>
+      <p className="text-muted-foreground text-sm">
         {isSignUp ? "Already have an account?" : "New here?"}&nbsp;
         <Link href={otherHref} className="text-foreground font-medium underline-offset-4 hover:underline">
           {isSignUp ? "Sign in" : "Create an account"}
         </Link>
-      </CardFooter>
-    </Card>
+      </p>
+    </div>
   );
 }
